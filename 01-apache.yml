@@ -1,6 +1,6 @@
 ---
 - name: Apache server installed
-  hosts: tdsnx-rhel-bastion
+  hosts: all
   become: true
   tasks:
   - name: Latest Apache Version Installed
