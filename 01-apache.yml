@@ -6,4 +6,4 @@
   - name: Latest Apache Version Installed
     yum:
       name: httpd
-      state: absent
+      state: latest
