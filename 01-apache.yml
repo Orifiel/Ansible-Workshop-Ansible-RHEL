@@ -1,9 +1,9 @@
 ---
 - name: Apache server installed
-  hosts: TDSNX-RHEL-BASTION
+  hosts: node1
   become: true
   tasks:
   - name: Latest Apache Version Installed
     yum:
       name: httpd
-      state: absent
+      state: latest
