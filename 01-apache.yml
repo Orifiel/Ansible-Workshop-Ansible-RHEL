@@ -1,6 +1,6 @@
 ---
 - name: Apache server installed
-  hosts: node1
+  hosts: all
   become: true
   tasks:
   - name: Latest Apache Version Installed
