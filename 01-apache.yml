@@ -1,6 +1,6 @@
 ---
 - name: Apache server installed
-  hosts: TDSNX-WEB-01
+  hosts: node1
   become: true
   tasks:
   - name: Latest Apache Version Installed
