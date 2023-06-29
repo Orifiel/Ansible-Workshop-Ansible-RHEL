@@ -5,4 +5,4 @@
   - name: Prints Ansible facts
     debug:
       msg: The default IPv4 address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}
-    
+      msg: The Linux Distribution is {{ ansible_distribution }} in the version {{ ansible_distribution_version }}.
