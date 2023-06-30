@@ -8,7 +8,4 @@
   - name: Prints Ansible facts
     debug:
       msg: The default IPv4 address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}
-  - name: Prints Ansible facts
-    debug:
-      msg: Services installed in {{ ansible_fqdn }} is {{ ansible_facts.packages }}
       
