@@ -1,0 +1,29 @@
+---
+- name: Configuring Firewall to Web App
+  hosts: web
+  tasks:
+    - name: Install Firewalld
+      yum:
+        name: firewalld
+        state: latest
+
+
+    - name: Start Firewalld
+      service:
+        name: firewalld
+        enabled: yes
+        state: started
+
+    - name: Open service port
+      firewalld:
+        service: http
+        state: enabled
+        immediate: true
+        permanent: true
+
+    - name: Open TCP port
+      firewalld:
+        port: "8080/tcp"
+        immediate: yes
+        permanent: yes
+        state: enabled
