@@ -1,6 +1,6 @@
 ---
 - name: Check packages
-  hosts: node1
+  hosts: web
   become: true
   vars:
     package: "httpd"
