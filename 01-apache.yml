@@ -5,5 +5,5 @@
   tasks:
   - name: Latest httpd Version Installed
     yum:
-      name: 
-      state: 
+      name: []
+      state: []
