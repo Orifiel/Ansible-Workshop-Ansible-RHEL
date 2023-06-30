@@ -1,7 +1,6 @@
 ---
 - name: Output facts within a playbook
   hosts: all
-
    tasks:
   - name: Prints Ansible facts
     debug:
