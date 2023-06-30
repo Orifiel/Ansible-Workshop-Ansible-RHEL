@@ -3,7 +3,7 @@
   hosts: node1
   become: true
   tasks:
-  - name: Latest {{ item }} Version Installed
+  - name: Latest {{ package }} Version Installed
     yum:
-      name: {{ item }}
+      name: {{ package }}
       state: latest
