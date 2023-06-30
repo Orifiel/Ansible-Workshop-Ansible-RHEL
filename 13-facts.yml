@@ -1,7 +1,7 @@
 ---
 - name: Output facts within a playbook
   hosts: all
-   tasks:
+  tasks:
   - name: Prints Ansible facts
     debug:
       msg: The Linux Distribution is {{ ansible_distribution }} in the version {{ ansible_distribution_version }}
