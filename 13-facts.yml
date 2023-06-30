@@ -1,11 +1,15 @@
 ---
 - name: Output facts within a playbook
   hosts: all
-  tasks:
+
+   tasks:
   - name: Prints Ansible facts
     debug:
       msg: The Linux Distribution is {{ ansible_distribution }} in the version {{ ansible_distribution_version }}
   - name: Prints Ansible facts
     debug:
       msg: The default IPv4 address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}
+  - name: Prints Ansible facts
+    debug:
+      msg: Services installed in {{ ansible_fqdn }} is {{ ansible_facts.packages }}
       
