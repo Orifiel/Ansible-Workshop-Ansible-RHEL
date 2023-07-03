@@ -1,0 +1,53 @@
+---
+- name: Apache server removed
+  hosts: web
+  become: true
+  tasks:
+  - name: Apache Stop and Disable
+    service:
+      name: httpd
+      enabled: false
+      state: stopped
+
+  - name: Apache Remove
+    yum:
+      name: httpd
+      state: absent
+  
+  - name: Remove web.html
+    command:
+      cmd: rm -rf /var/html/web.html
+
+  - name: Remove configuration file
+    command:
+      cmd: echo "" > /etc/httpd/conf/httpd.conf
+
+  - name: Close TCP port
+    firewalld:
+      port: "8080/tcp"
+      immediate: yes
+      permanent: yes
+      state: disabled
+
+  
+  - name: Close service port
+    firewalld:
+      service: http
+      state: disabled
+      immediate: true
+      permanent: true
+
+  - name: End Firewalld
+    service:
+      name: firewalld
+      enabled: no
+
+  - name: Remove Firewalld
+    yum:
+      name: firewalld
+      state: absent
+        
+      
+
+
+  
