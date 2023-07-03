@@ -50,14 +50,16 @@
        dest: /etc/httpd/conf/
     notify:
        - restart_apache
-  
+       
+  - name: Copy Application Prod and Homog
+    copy:
+      src: "{{ stage }}_web.html"
+      dest: /var/www/html/index.html
+      
   handlers:
     - name: restart_apache
       service:
         name: httpd
         state: restarted
 
-  - name: Copy Application Prod and Homog
-    copy:
-      src: "{{ stage }}_web.html"
-      dest: /var/www/html/index.html
+  
